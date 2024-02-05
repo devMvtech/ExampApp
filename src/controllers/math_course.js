@@ -1,4 +1,4 @@
-const db = require("../../db");
+const db = require("../../database");
 
 exports.createCourse = async (req, res, formattedFileUrls) => {
   const { title } = req.body;
