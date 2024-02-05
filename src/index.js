@@ -1,12 +1,12 @@
 const express = require("express");
 const app = express();
-const { PORT, CLIENT_URL } = require("./src/constants");
+const { PORT, CLIENT_URL } = require("./constants");
 const cookieParser = require("cookie-parser");
 const passport = require("passport");
 const cors = require("cors");
 
 //import passport middleware
-require("./src/middlewares/passport-middleware");
+require("./middlewares/passport-middleware");
 
 //initialize middlewares
 app.use(express.json());
@@ -15,10 +15,10 @@ app.use(cors({ origin: CLIENT_URL, credentials: true }));
 app.use(passport.initialize());
 
 //import routes
-const authRoutes = require("./src/routes/auth");
-const mathRoutes = require("./src/routes/math_course");
-const chemRoutes = require("./src/routes/chem_course");
-const phyRoutes = require("./src/routes/phy_course");
+const authRoutes = require("./routes/auth");
+const mathRoutes = require("./routes/math_course");
+const chemRoutes = require("./routes/chem_course");
+const phyRoutes = require("./routes/phy_course");
 
 //initialize routes
 app.use("/api", authRoutes);
