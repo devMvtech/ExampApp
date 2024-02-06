@@ -8,7 +8,13 @@ exports.createCourse = async (req, res, formattedFileUrls) => {
   try {
     // const title = req.body.title; // Assuming title is included in the request body
     const coverImg = formattedFileUrls.cover_image[0].downloadURL;
-    const page = formattedFileUrls.page.map((page) => page.downloadURL);
+    const page = [
+      formattedFileUrls.page1[0].downloadURL,
+      formattedFileUrls.page2[0].downloadURL,
+      formattedFileUrls.page3[0].downloadURL,
+      formattedFileUrls.page4[0].downloadURL,
+      formattedFileUrls.page5[0].downloadURL,
+    ];
 
     // Check if the title already exists in the physics table
     const titleExists = await db.query(

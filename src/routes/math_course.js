@@ -31,7 +31,11 @@ const upload = multer({ storage: multer.memoryStorage() });
 // Middleware for handling file uploads
 const uploadMiddleware_course = upload.fields([
   { name: "cover_image", maxCount: 1 },
-  { name: "page", maxCount: 8 },
+  { name: "page1", maxCount: 1 },
+  { name: "page2", maxCount: 1 },
+  { name: "page3", maxCount: 1 },
+  { name: "page4", maxCount: 1 },
+  { name: "page5", maxCount: 1 },
 ]);
 
 const giveCurrentDateTime = () => {
