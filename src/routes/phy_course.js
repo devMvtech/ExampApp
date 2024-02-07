@@ -26,7 +26,10 @@ initializeApp(firebaseConfig);
 const storage = getStorage();
 
 // Setting up multer as a middleware to grab photo uploads
-const upload = multer({ storage: multer.memoryStorage() });
+const upload = multer({
+  storage: multer.memoryStorage(),
+  limits: { fileSize: 8 * 1024 * 1024 },
+});
 
 // Middleware for handling file uploads
 const uploadMiddleware_course = upload.fields([
